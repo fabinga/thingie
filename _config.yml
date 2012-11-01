@@ -1,11 +1,11 @@
-## githubiverse-template by Gary Hodgson
+## fabinga-template by Gary Hodgson
 ## license: GPL3
 ##
 ## The data below is left as an example.  Please change each entry to match your requirements. 
 ## 
 
 ## Uses distinct namespace. Jekyll settings should go at the root level.
-githubiverse:
+fabinga:
     ## Metadata
     title: "Mechanical Movement #27"
     author: Gary Hodgson
@@ -15,8 +15,8 @@ githubiverse:
     ## Github project parameters.
     github:
         base: https://github.com/
-        user: garyhodgson
-        repository: githubiverse-tst
+        user: fabinga
+        repository: thingie
         branch: master
 
     ## The names of directories where any images, source and stl files associated with the project can be found.
