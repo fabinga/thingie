@@ -1,18 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <title>Githubiverse: {{ site.githubiverse.title }} by {{ site.githubiverse.author }}</title>
+    <title>Fabinga: {{ site.fabinga.title }} by {{ site.fabinga.author }}</title>
 
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     
     <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="css/lightbox/lightbox.css" rel="stylesheet" />
-    <link href="css/githubiverse/default.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="css/fabinga/default.css" rel="stylesheet" media="screen" type="text/css">
 
   </head>
   <body>
-    {% if site.githubiverse.show_forkme_ribbon %}
-      <a href="{{site.githubiverse.github.base}}{{site.githubiverse.github.user}}/{{site.githubiverse.github.repository}}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    {% if site.fabinga.show_forkme_ribbon %}
+      <a href="{{site.fabinga.github.base}}{{site.fabinga.github.user}}/{{site.fabinga.github.repository}}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     {% endif %}
 
     <div class="container">
@@ -22,7 +22,7 @@
           {% include header.html %}
 
           <div class="page-header">
-            <h1 id="title">{{ site.githubiverse.title }}<small> by {{ site.githubiverse.author }}</small></h1>
+            <h1 id="title">{{ site.fabinga.title }}<small> by {{ site.fabinga.author }}</small></h1>
           </div>
           
           <div class="row-fluid">
@@ -57,7 +57,7 @@
                 <div class="span12">
                   <div id="tags">
                     <i class="icon-tags" title="tags"></i>&nbsp;
-                    {% for tag in site.githubiverse.tags %}
+                    {% for tag in site.fabinga.tags %}
                       <a href="#" class="tag"><span class="label">{{ tag }}</span></a>
                     {% endfor %}
                   </div>
@@ -66,20 +66,20 @@
 
               <div class="meta row-fluid">
                 <div class="span6">
-                  <div id="home"><i class='icon-home' title="Repository"></i>&nbsp;<a href="{{ site.githubiverse.github.base }}{{site.githubiverse.github.user}}/{{ site.githubiverse.github.repository }}">{{ site.githubiverse.github.repository }}</a></div>
+                  <div id="home"><i class='icon-home' title="Repository"></i>&nbsp;<a href="{{ site.fabinga.github.base }}{{site.fabinga.github.user}}/{{ site.fabinga.github.repository }}">{{ site.fabinga.github.repository }}</a></div>
                 </div>
 
                 <div class="span6">
-                  <div id="author"><i class='icon-user' title="User"></i>&nbsp;<a href="{{ site.githubiverse.github.base }}{{ site.githubiverse.github.user }}">{{ site.githubiverse.github.user }}</a></div>
+                  <div id="author"><i class='icon-user' title="User"></i>&nbsp;<a href="{{ site.fabinga.github.base }}{{ site.fabinga.github.user }}">{{ site.fabinga.github.user }}</a></div>
                 </div>
               </div>
 
               <div class="meta row-fluid">
                 <div class="span6">
-                  <div id="license"><i class='icon-file' title="License"></i>&nbsp;{{ site.githubiverse.license }}</div>
+                  <div id="license"><i class='icon-file' title="License"></i>&nbsp;{{ site.fabinga.license }}</div>
                 </div>
                 <div class="span6">
-                  <div id="download-all"><i class='icon-download' title="Download Project"></i>&nbsp;<a href="{{ site.githubiverse.github.base }}{{ site.githubiverse.github.user }}/{{ site.githubiverse.github.repository }}/zipball/{{ site.githubiverse.github.branch }}">Download Project as Zip</a></div>
+                  <div id="download-all"><i class='icon-download' title="Download Project"></i>&nbsp;<a href="{{ site.fabinga.github.base }}{{ site.fabinga.github.user }}/{{ site.fabinga.github.repository }}/zipball/{{ site.fabinga.github.branch }}">Download Project as Zip</a></div>
                 </div>
               </div>
 
@@ -133,9 +133,9 @@
 
     <script>
       $(document).ready(function(){
-        autoloadSTL = {{ site.githubiverse.autoload_stl }};
-        leadImageName = '{{ site.githubiverse.lead_image }}';
-        showLeadImage = {{ site.githubiverse.show_lead_image }};
+        autoloadSTL = {{ site.fabinga.autoload_stl }};
+        leadImageName = '{{ site.fabinga.lead_image }}';
+        showLeadImage = {{ site.fabinga.show_lead_image }};
         thingiurlbase = "js/thingiview";
         thingiview = new Thingiview("stlviewer");
         thingiview.setObjectColor('#C0D8F0');
@@ -146,7 +146,7 @@
           loadStlString($(this).data('githubFile'));
         });
 
-        var githubUser = new Gh3.User("{{site.githubiverse.github.user}}"),
+        var githubUser = new Gh3.User("{{site.fabinga.github.user}}"),
             githubRepositories = new Gh3.Repositories(githubUser),
             stlFileCount = 0,
             srcFileCount = 0;
@@ -187,7 +187,7 @@
 
           var fileGithubUrl = githubRepo.html_url + '/blob/' + content.branchName + '/' + content.path;
           var rawFileURL = githubRepo.html_url + '/raw/' + content.branchName + '/' + content.path;
-          $('#sources').append("<li><a href='" + fileGithubUrl + "' target='_githubiverse' title='View in Github' class=\"srcfile\">"+ dirname + content.name + "</a></li>");
+          $('#sources').append("<li><a href='" + fileGithubUrl + "' target='_fabinga' title='View in Github' class=\"srcfile\">"+ dirname + content.name + "</a></li>");
           $('#sourcedownloads').append("<li><a class='btn-small btn-inverse' href='" + rawFileURL + "' download='" + content.name + "'><i class='icon-download-alt icon-white'></i>&nbsp;Download</a></li>");
         }
 
@@ -256,9 +256,9 @@
                   var rawFileURL = githubRepo.html_url + '/raw/' + content.branchName + '/' + content.path;
 
                   if (showLeadImage && content.name == leadImageName){
-                    $('#lead-image-container').append("<a class='thumbnail' href='" + rawFileURL + "' rel='lightbox[githubiverse]'><img class='lead-image' src='" + rawFileURL + "' alt='" + content.name + "' title='" + content.name + "' /></a>");
+                    $('#lead-image-container').append("<a class='thumbnail' href='" + rawFileURL + "' rel='lightbox[fabinga]'><img class='lead-image' src='" + rawFileURL + "' alt='" + content.name + "' title='" + content.name + "' /></a>");
                   } else {
-                    $('#thumbnails').append("<li><a class='thumbnail' href='" + rawFileURL + "' rel='lightbox[githubiverse]'><img class='imgfile' src='" + rawFileURL + "' alt='" + content.name + "' title='" + content.name + "' /></a></li>");
+                    $('#thumbnails').append("<li><a class='thumbnail' href='" + rawFileURL + "' rel='lightbox[fabinga]'><img class='imgfile' src='" + rawFileURL + "' alt='" + content.name + "' title='" + content.name + "' /></a></li>");
                   }
                 }
               });
@@ -360,30 +360,30 @@
           if(err) { throw "Error fetching github repositories." }
         });
 
-        githubRepo = new Gh3.Repository("{{site.githubiverse.github.repository}}", githubUser);
+        githubRepo = new Gh3.Repository("{{site.fabinga.github.repository}}", githubUser);
         githubRepo.fetch(function (err, res) {
           if(err) { throw "Error fetching github repository." }
 
           githubRepo.fetchBranches(function (err, res) {
             if(err) { throw "Error fetching github branches." }
 
-            master = githubRepo.getBranchByName("{{site.githubiverse.github.branch}}");
+            master = githubRepo.getBranchByName("{{site.fabinga.github.branch}}");
 
             master.fetchContents(function (err, res) {
               if(err) { throw "Error fetching github repository contents." }
 
-              processDirectories('{{ site.githubiverse.src_dir }}', showSources);
-              processDirectories('{{ site.githubiverse.img_dir }}', showImages);
-              processDirectories('{{ site.githubiverse.stl_dir }}', showSTLs);
+              processDirectories('{{ site.fabinga.src_dir }}', showSources);
+              processDirectories('{{ site.fabinga.img_dir }}', showImages);
+              processDirectories('{{ site.fabinga.stl_dir }}', showSTLs);
 
               $('#updated').append("&nbsp;"+humaneDate(githubRepo.updated_at));
               $('#updated').attr('title', (new Date(githubRepo.updated_at)).toLocaleString());
               $('#created').append("&nbsp;"+humaneDate(githubRepo.created_at));
               $('#created').attr('title', (new Date(githubRepo.created_at)).toLocaleString());
 
-              {% if site.githubiverse.description_file %}
+              {% if site.fabinga.description_file %}
                 
-                var descriptionFile = master.getFileByName('{{site.githubiverse.description_file}}');
+                var descriptionFile = master.getFileByName('{{site.fabinga.description_file}}');
 
                 descriptionFile.fetchContent(function (err, res) {
                   if(err) { throw "Error retrieving github description file." }
